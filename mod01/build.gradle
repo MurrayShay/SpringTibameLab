@@ -1,0 +1,30 @@
+group 'com.tibame'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+war {
+    baseName = 'mod01'
+    version =  '0.0.1'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-context:${springVersion}"
+
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "com.github.stefanbirkner:system-rules:${systemRulesVersion}"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}

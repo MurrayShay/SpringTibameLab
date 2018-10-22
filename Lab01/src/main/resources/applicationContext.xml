@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sqlConnetionInfo" class="com.tibame.domain.MySQLConnetionInfo">
+        <property name="DRIVER_CLASS_NAME" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="DATABASE_NAME" value="Hibernate"/>
+        <property name="URL" value="jdbc:mysql://localhost:3306/"/>
+        <property name="USER" value="root"/>
+        <property name="PASSWORD" value="testpassword"/>
+    </bean>
+
+</beans>

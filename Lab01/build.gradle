@@ -1,0 +1,33 @@
+group 'com.tibame'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+war {
+    baseName = 'Lab01'
+    version =  '0.0.1'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet.jsp:jsp-api:2.2"
+    compile "javax.servlet:jstl:1.2"
+
+    compile "com.thoughtworks.xstream:xstream:1.4.10"
+
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "com.github.stefanbirkner:system-rules:${systemRulesVersion}"
+}
