@@ -7,3 +7,6 @@
 *.iml
 out
 
+build/tmp/compileJava/
+src/test/
+/Lab01/build/*
