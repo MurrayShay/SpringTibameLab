@@ -6,8 +6,5 @@
 .idea
 *.iml
 out
-
-build/tmp/compileJava/
-src/test/
-/Lab01/build/*
-/Lab02/build/*
+gen
+/build/*

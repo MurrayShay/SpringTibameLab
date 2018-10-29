@@ -1,0 +1,39 @@
+group 'com.tibame'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+war {
+    baseName = 'Lab02'
+    version =  '0.0.1'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet.jsp:jsp-api:2.2"
+    compile "javax.servlet:jstl:1.2"
+
+    compile "com.thoughtworks.xstream:xstream:1.4.10"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+
+    // 參考網址: https://blog.csdn.net/feierky/article/details/21699023
+    // 實驗 mavenLocal() 到底有沒有效果，結果發現我使用的是IDE bundle maven3，
+    // 因此我找到他的位置 /Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/conf，
+    // 並修改 setting.xml 讓他指回 /Users/murray/.m2/repository 這樣 mavenLocal() 才會生效。
+    // compile 'murray.shay:MWL4b:0.0.1'
+
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "com.github.stefanbirkner:system-rules:${systemRulesVersion}"
+}
